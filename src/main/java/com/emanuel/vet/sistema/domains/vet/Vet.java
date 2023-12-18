@@ -1,5 +1,6 @@
 package com.emanuel.vet.sistema.domains.vet;
 
+import com.emanuel.vet.sistema.dtos.VetDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -31,4 +32,11 @@ public class Vet {
     @NotBlank
     @Column(unique = true)
     private String cfmv;
+
+    public Vet(VetDTO data) {
+        this.firstName = data.firstName();
+        this.lastName = data.lastName();
+        this.email = data.email();
+        this.cfmv = data.cfmv();
+    }
 }

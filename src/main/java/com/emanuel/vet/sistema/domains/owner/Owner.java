@@ -1,5 +1,6 @@
 package com.emanuel.vet.sistema.domains.owner;
 
+import com.emanuel.vet.sistema.dtos.OwnerDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -35,4 +36,14 @@ public class Owner {
 
     @NotBlank
     private String phoneNumber;
+
+    public Owner(OwnerDTO data) {
+        this.firstName = data.firstName();
+        this.lastName = data.lastName();
+        this.adress = data.adress();
+        this.city = data.city();
+        this.houseNumber = data.houseNumber();
+        this.email = data.email();
+        this.phoneNumber = data.phoneNumber();
+    }
 }
