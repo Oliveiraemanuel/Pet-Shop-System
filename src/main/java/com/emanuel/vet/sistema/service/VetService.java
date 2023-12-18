@@ -40,7 +40,7 @@ public class VetService {
         return this.vetRepository.findAll(pageable);
     }
 
-    public Optional<Vet> findById(Long id){
-        return this.vetRepository.findById(id);
+    public Optional<Vet> findById(Long id) throws Exception {
+        return Optional.ofNullable(this.vetRepository.findById(id).orElseThrow(() -> new Exception("Id não encontrado")));
     }
 }

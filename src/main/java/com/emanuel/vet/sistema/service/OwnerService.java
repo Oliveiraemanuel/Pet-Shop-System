@@ -40,7 +40,7 @@ public class OwnerService {
         return this.ownerRepository.findAll(pageable);
     }
 
-    public Optional<Owner> findById(Long id){
-        return this.ownerRepository.findById(id);
+    public Optional<Owner> findById(Long id) throws Exception {
+        return Optional.ofNullable(this.ownerRepository.findById(id).orElseThrow(() -> new Exception("Id não encontrado")));
     }
 }
