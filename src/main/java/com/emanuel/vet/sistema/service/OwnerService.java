@@ -36,7 +36,7 @@ public class OwnerService {
         return owner;
     }
 
-    public Page<Owner> findAllMunicipios(Pageable pageable){
+    public Page<Owner> findAllOwners(Pageable pageable){
         return this.ownerRepository.findAll(pageable);
     }
 
