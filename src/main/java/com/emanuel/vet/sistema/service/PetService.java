@@ -36,7 +36,7 @@ public class PetService {
         return pet;
     }
 
-    public Page<Pet> findAllMunicipios(Pageable pageable){
+    public Page<Pet> findallPets(Pageable pageable){
         return this.petRepository.findAll(pageable);
     }
 

@@ -36,7 +36,7 @@ public class VetService {
         return vet;
     }
 
-    public Page<Vet> findAllMunicipios(Pageable pageable){
+    public Page<Vet> findAllVets(Pageable pageable){
         return this.vetRepository.findAll(pageable);
     }
 
