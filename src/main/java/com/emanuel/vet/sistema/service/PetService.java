@@ -1,5 +1,6 @@
 package com.emanuel.vet.sistema.service;
 
+import com.emanuel.vet.sistema.domains.owner.Owner;
 import com.emanuel.vet.sistema.domains.pet.Pet;
 import com.emanuel.vet.sistema.dtos.PetDTO;
 import com.emanuel.vet.sistema.repositories.PetRepository;
@@ -17,6 +18,9 @@ public class PetService {
     @Autowired
     private PetRepository petRepository;
 
+    @Autowired
+    private OwnerService ownerService;
+
     @Transactional
     public void savePet(Pet pet){
         this.petRepository.save(pet);
@@ -27,16 +31,22 @@ public class PetService {
         this.petRepository.delete(pet);
     }
 
-    public Pet createPet(PetDTO petDTO){
+    public Pet createPet(PetDTO pet) throws Exception {
 
-        var pet = new Pet(petDTO);
+        Owner owner = ownerService.findById(pet.ownerId());
 
-        savePet(pet);
+        var newPet = new Pet();
+        newPet.setOwner(owner);
+        newPet.setName(pet.name());
+        newPet.setSpecies(pet.species());
+        newPet.setBirthDate(pet.birthDate());
 
-        return pet;
+        savePet(newPet);
+
+        return newPet;
     }
 
-    public Page<Pet> findallPets(Pageable pageable){
+    public Page<Pet> findAllPets(Pageable pageable){
         return this.petRepository.findAll(pageable);
     }
 
