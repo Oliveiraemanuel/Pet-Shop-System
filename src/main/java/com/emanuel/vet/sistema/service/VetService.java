@@ -2,6 +2,7 @@ package com.emanuel.vet.sistema.service;
 
 import com.emanuel.vet.sistema.domains.vet.Vet;
 import com.emanuel.vet.sistema.dtos.VetDTO;
+import com.emanuel.vet.sistema.producer.VetProducer;
 import com.emanuel.vet.sistema.repositories.VetRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,10 @@ public class VetService {
 
     @Autowired
     private VetRepository vetRepository;
+
+    @Autowired
+    private VetProducer vetProducer;
+
 
     @Transactional
     public void saveVet(Vet vet){
@@ -32,6 +37,7 @@ public class VetService {
         var vet = new Vet(vetDTO);
 
         saveVet(vet);
+        vetProducer.publishMessageEmail(vet);
 
         return vet;
     }
