@@ -10,9 +10,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "vets")
-@Getter
-@Setter
-@NoArgsConstructor
 public class Vet {
 
     @Id
@@ -38,5 +35,37 @@ public class Vet {
         this.lastName = data.lastName();
         this.email = data.email();
         this.cfmv = data.cfmv();
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCfmv() {
+        return cfmv;
+    }
+
+    public void setCfmv(String cfmv) {
+        this.cfmv = cfmv;
     }
 }
