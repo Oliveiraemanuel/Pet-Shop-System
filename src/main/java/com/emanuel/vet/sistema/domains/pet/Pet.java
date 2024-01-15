@@ -3,7 +3,6 @@ package com.emanuel.vet.sistema.domains.pet;
 import com.emanuel.vet.sistema.domains.owner.Owner;
 import com.emanuel.vet.sistema.domains.pet.enums.Species;
 import jakarta.persistence.*;
-import lombok.*;
 
 @Entity
 @Table(name = "pets")
