@@ -18,9 +18,6 @@ public class VetService {
     @Autowired
     private VetRepository vetRepository;
 
-    @Autowired
-    private VetProducer vetProducer;
-
 
     @Transactional
     public void saveVet(Vet vet){
@@ -37,7 +34,6 @@ public class VetService {
         var vet = new Vet(vetDTO);
 
         saveVet(vet);
-        vetProducer.publishMessageEmail(vet);
 
         return vet;
     }
