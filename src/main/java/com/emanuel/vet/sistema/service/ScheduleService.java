@@ -2,11 +2,9 @@ package com.emanuel.vet.sistema.service;
 
 import com.emanuel.vet.sistema.domains.pet.Pet;
 import com.emanuel.vet.sistema.domains.schedule.Schedule;
-import com.emanuel.vet.sistema.domains.schedule.Schedule;
 import com.emanuel.vet.sistema.domains.vet.Vet;
 import com.emanuel.vet.sistema.dtos.ScheduleDTO;
 import com.emanuel.vet.sistema.producer.ScheduleProducer;
-import com.emanuel.vet.sistema.repositories.ScheduleRepository;
 import com.emanuel.vet.sistema.repositories.ScheduleRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 public class ScheduleService {

@@ -2,7 +2,6 @@ package com.emanuel.vet.sistema.service;
 
 import com.emanuel.vet.sistema.domains.vet.Vet;
 import com.emanuel.vet.sistema.dtos.VetDTO;
-import com.emanuel.vet.sistema.producer.VetProducer;
 import com.emanuel.vet.sistema.repositories.VetRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,9 +1,7 @@
 package com.emanuel.vet.sistema.controller;
 
 import com.emanuel.vet.sistema.domains.schedule.Schedule;
-import com.emanuel.vet.sistema.domains.schedule.Schedule;
 import com.emanuel.vet.sistema.dtos.ScheduleDTO;
-import com.emanuel.vet.sistema.repositories.ScheduleRepository;
 import com.emanuel.vet.sistema.service.ScheduleService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
